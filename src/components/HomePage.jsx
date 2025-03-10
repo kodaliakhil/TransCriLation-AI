@@ -56,7 +56,7 @@ export default function HomePage({ setFile, setAudioStream }) {
     return () => clearInterval(interval);
   });
   return (
-    <main className="flex-1 p-4 flex flex-col gap-3 text-center sm:gap-4 md:gap-5 justify-center pb-20">
+    <main className="flex-1 p-4 flex flex-col gap-3 text-center sm:gap-4 justify-center pb-20">
       <h1 className="font-semibold text-5xl sm:text-6xl md:text-7xl">
         Trans<span className="text-blue-400 bold">Crilation</span> AI
       </h1>
@@ -89,7 +89,7 @@ export default function HomePage({ setFile, setAudioStream }) {
             onChange={(e) => setFile(e.target.files[0])}
             className="hidden"
             type="file"
-            accept=".mp3,.wave"
+            accept=".mp3,.wave,.m4a"
           />
         </label>{" "}
         a mp3 file

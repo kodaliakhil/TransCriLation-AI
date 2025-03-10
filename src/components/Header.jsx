@@ -6,7 +6,7 @@ export default function Header() {
       <h1 className="font-medium">
         Trans<span className="text-blue-400 bold">Crilation</span> AI
       </h1>
-      <button className=" specialBtn flex items-center gap-2 px-4 py-2 rounded-lg text-blue-400 cursor-pointer">
+      <button className=" specialBtn flex items-center gap-2 px-4 py-2 rounded-lg text-sm text-blue-400 cursor-pointer">
         <p>New</p>
         <i className="fa-solid fa-plus"></i>
       </button>
