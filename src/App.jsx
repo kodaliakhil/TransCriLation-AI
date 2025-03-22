@@ -49,6 +49,7 @@ function App() {
           break;
         case RESULT:
           setOutput(e.data.results);
+          console.log(e.data.results);
           break;
         case INFERENCE_DONE:
           setFinished(true);
@@ -64,7 +65,7 @@ function App() {
     const sampling_rate = 16000;
     const audioCTX = new AudioContext({ sampleRate: sampling_rate });
     const response = await file.arrayBuffer();
-    const decoded = await audioCTX.decodedAudioData(response);
+    const decoded = await audioCTX.decodeAudioData(response);
     const audio = decoded.getChannelData(0);
     return audio;
   }
@@ -86,13 +87,14 @@ function App() {
       <section className="min-h-screen flex flex-col">
         <Header />
         {output ? (
-          <Information />
+          <Information output={output} />
         ) : loading ? (
           <Transcribing />
         ) : isAudioAvailable ? (
           <FileDisplay
             file={file}
             audioStream={audioStream}
+            handleFormSubmission={handleFormSubmission}
             handleAudioReset={handleAudioReset}
           />
         ) : (
