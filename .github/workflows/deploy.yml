@@ -1,6 +1,7 @@
 name: Deploy TransCriLation-AI to gh-pages
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -23,7 +24,7 @@ jobs:
       #Install Dependencies
       - name: Install Dependencies
         run: npm install
-        
+
       #Build the project
       - name: Build
         run: npm run build
